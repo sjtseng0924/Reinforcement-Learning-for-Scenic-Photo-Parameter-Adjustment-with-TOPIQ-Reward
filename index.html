@@ -7,10 +7,10 @@
   <meta name="title" content="Reinforcement Learning for Scenic Photo Enhancement with TOPIQ Reward">
   <meta name="description" content="An academic project page for a PPO-based sequential scenic photo enhancement method guided by TOPIQ no-reference reward.">
   <meta name="keywords" content="reinforcement learning, image enhancement, TOPIQ, PPO, scenic photography, computer vision">
-  <meta name="author" content="Author 1, Author 2, Author 3">
+  <meta name="author" content="Chih-Hsuan Chen, Shih-Chen Tseng, Hsi-An Chen">
 
   <meta property="og:type" content="article">
-  <meta property="og:site_name" content="Institution Placeholder">
+  <meta property="og:site_name" content="National Yung Ming Chiao Tung University">
   <meta property="og:title" content="Reinforcement Learning for Scenic Photo Enhancement with TOPIQ Reward">
   <meta property="og:description" content="A sequential reinforcement learning method for RGB scenic photo enhancement using TOPIQ as a no-reference reward signal.">
   <meta property="og:url" content="https://annchenn.github.io/RL_final_project/">
@@ -23,9 +23,9 @@
   <meta name="twitter:image" content="static/images/social_preview.png">
 
   <meta name="citation_title" content="Reinforcement Learning for Scenic Photo Enhancement with TOPIQ Reward">
-  <meta name="citation_author" content="Author 1">
-  <meta name="citation_author" content="Author 2">
-  <meta name="citation_author" content="Author 3">
+  <meta name="citation_author" content="Chih-Hsuan Chen">
+  <meta name="citation_author" content="Shih-Chen Tseng">
+  <meta name="citation_author" content="Hsi-An Chen">
   <meta name="citation_publication_date" content="2026">
   <meta name="citation_conference_title" content="Course Final Project">
   <meta name="citation_pdf_url" content="static/pdfs/RL_final_project__Copy_.pdf">
@@ -69,123 +69,6 @@
   }
   </script>
 
-  <style>
-    body {
-      font-family: "Inter", sans-serif;
-    }
-
-    .publication-title {
-      letter-spacing: 0;
-    }
-
-    .hero-teaser {
-      margin-top: 1.5rem;
-      border-radius: 6px;
-      overflow: hidden;
-      border: 1px solid #e6e6e6;
-    }
-
-    .hero-teaser img,
-    .method-figure img,
-    .comparison-card img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .method-pipeline {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 0.45rem;
-      margin: 1.25rem 0;
-      font-size: 0.94rem;
-    }
-
-    .pipeline-node {
-      border: 1px solid #d8dbe2;
-      border-radius: 6px;
-      padding: 0.55rem 0.75rem;
-      background: #fff;
-      font-weight: 600;
-      color: #222;
-    }
-
-    .pipeline-arrow {
-      color: #6b7280;
-      font-weight: 700;
-    }
-
-    .result-table th,
-    .result-table td {
-      text-align: center;
-      vertical-align: middle;
-    }
-
-    .result-table th:first-child,
-    .result-table td:first-child {
-      text-align: left;
-    }
-
-    .comparison-card {
-      border: 1px solid #e5e7eb;
-      border-radius: 6px;
-      padding: 1rem;
-      height: 100%;
-      background: #fff;
-    }
-
-    .comparison-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 0.75rem;
-    }
-
-    .comparison-grid figure {
-      margin: 0;
-    }
-
-    .comparison-grid img {
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border: 1px solid #eeeeee;
-      border-radius: 4px;
-      background: #f7f7f7;
-    }
-
-    .comparison-grid figcaption,
-    .asset-table td,
-    .asset-table th {
-      font-size: 0.9rem;
-    }
-
-    .comparison-grid figcaption {
-      margin-top: 0.35rem;
-      text-align: center;
-      font-weight: 600;
-      color: #333;
-    }
-
-    .paper-note {
-      color: #666;
-      font-size: 0.95rem;
-    }
-
-    @media screen and (max-width: 768px) {
-      .publication-title {
-        font-size: 2rem !important;
-      }
-
-      .comparison-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .method-pipeline {
-        justify-content: flex-start;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -228,12 +111,12 @@
                 </span>
               </div>
 
-              <figure class="hero-teaser">
+              <figure class="image mt-5">
                 <img src="static/images/banner_poster.jpg" alt="Representative scenic photo enhancement result preview">
               </figure>
-              <p class="paper-note mt-3">
+              <h2 class="subtitle has-text-centered mt-3">
                 We formulate RGB landscape enhancement as a sequential decision-making problem and optimize multi-step parameter adjustments using TOPIQ as a no-reference reward.
-              </p>
+              </h2>
             </div>
           </div>
         </div>
@@ -264,23 +147,13 @@
           </p>
         </div>
 
-        <div class="method-pipeline" aria-label="Method pipeline">
-          <span class="pipeline-node">Input image</span>
-          <span class="pipeline-arrow">→</span>
-          <span class="pipeline-node">Feature extraction</span>
-          <span class="pipeline-arrow">→</span>
-          <span class="pipeline-node">PPO policy</span>
-          <span class="pipeline-arrow">→</span>
-          <span class="pipeline-node">Image adjustment action</span>
-          <span class="pipeline-arrow">→</span>
-          <span class="pipeline-node">Updated image</span>
-          <span class="pipeline-arrow">→</span>
-          <span class="pipeline-node">TOPIQ reward</span>
-          <span class="pipeline-arrow">→</span>
-          <span class="pipeline-node">Next step / final output</span>
+        <div class="box has-text-centered" aria-label="Method pipeline">
+          <p>
+            <strong>Input image</strong> → <strong>Feature extraction</strong> → <strong>PPO policy</strong> → <strong>Image adjustment action</strong> → <strong>Updated image</strong> → <strong>TOPIQ reward</strong> → <strong>Next step / final output</strong>
+          </p>
         </div>
 
-        <figure class="method-figure">
+        <figure class="image">
           <img src="static/images/method_flowchart.png" alt="Overview diagram of the PPO and TOPIQ reward image enhancement pipeline">
         </figure>
       </div>
@@ -325,7 +198,7 @@
       <div class="container is-max-desktop">
         <h2 class="title is-3">Quantitative Results</h2>
         <div class="table-container">
-          <table class="table is-fullwidth is-striped is-hoverable result-table">
+          <table class="table is-fullwidth is-striped is-hoverable">
             <thead>
               <tr>
                 <th>Method</th>
@@ -356,7 +229,7 @@
             </tbody>
           </table>
         </div>
-        <p class="paper-note"><em>Scores are reported in scaled TOPIQ units. Higher is better.</em></p>
+        <p><em>Scores are reported in scaled TOPIQ units. Higher is better.</em></p>
       </div>
     </section>
 
@@ -373,61 +246,61 @@
 
             <div class="columns is-multiline">
               <div class="column is-full">
-                <article class="comparison-card">
+                <article class="box">
                   <h3 class="title is-5">Example 1</h3>
-                  <div class="comparison-grid">
-                    <figure><img src="static/images/comparison_01_input.jpg" alt="Example 1 input image" loading="lazy"><figcaption>Input</figcaption></figure>
-                    <figure><img src="static/images/comparison_01_ours.jpg" alt="Example 1 result from our method" loading="lazy"><figcaption>Ours</figcaption></figure>
-                    <figure><img src="static/images/comparison_01_drlisp.jpg" alt="Example 1 result from DRL-ISP" loading="lazy"><figcaption>DRL-ISP</figcaption></figure>
-                    <figure><img src="static/images/comparison_01_star.jpg" alt="Example 1 reserved Star Enhancer result" loading="lazy"><figcaption>Star Enhancer</figcaption></figure>
+                  <div class="columns is-mobile is-multiline">
+                    <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_01_input.jpg" alt="Example 1 input image" loading="lazy"><p><strong>Input</strong></p></div>
+                    <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_01_ours.jpg" alt="Example 1 result from our method" loading="lazy"><p><strong>Ours</strong></p></div>
+                    <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_01_drlisp.jpg" alt="Example 1 result from DRL-ISP" loading="lazy"><p><strong>DRL-ISP</strong></p></div>
+                    <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_01_star.jpg" alt="Example 1 reserved Star Enhancer result" loading="lazy"><p><strong>Star Enhancer</strong></p></div>
                   </div>
                 </article>
               </div>
 
               <div class="column is-full">
-                <article class="comparison-card">
+                <article class="box">
                   <h3 class="title is-5">Example 2</h3>
-                  <div class="comparison-grid">
-                    <figure><img src="static/images/comparison_02_input.jpg" alt="Example 2 input image" loading="lazy"><figcaption>Input</figcaption></figure>
-                    <figure><img src="static/images/comparison_02_ours.jpg" alt="Example 2 result from our method" loading="lazy"><figcaption>Ours</figcaption></figure>
-                    <figure><img src="static/images/comparison_02_drlisp.jpg" alt="Example 2 result from DRL-ISP" loading="lazy"><figcaption>DRL-ISP</figcaption></figure>
-                    <figure><img src="static/images/comparison_02_star.jpg" alt="Example 2 reserved Star Enhancer result" loading="lazy"><figcaption>Star Enhancer</figcaption></figure>
+                  <div class="columns is-mobile is-multiline">
+                    <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_02_input.jpg" alt="Example 2 input image" loading="lazy"><p><strong>Input</strong></p></div>
+                    <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_02_ours.jpg" alt="Example 2 result from our method" loading="lazy"><p><strong>Ours</strong></p></div>
+                    <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_02_drlisp.jpg" alt="Example 2 result from DRL-ISP" loading="lazy"><p><strong>DRL-ISP</strong></p></div>
+                    <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_02_star.jpg" alt="Example 2 reserved Star Enhancer result" loading="lazy"><p><strong>Star Enhancer</strong></p></div>
                   </div>
                 </article>
               </div>
 
               <div class="column is-full">
-                <article class="comparison-card">
+                <article class="box">
                   <h3 class="title is-5">Example 3</h3>
-                  <div class="comparison-grid">
-                    <figure><img src="static/images/comparison_03_input.jpg" alt="Example 3 input image" loading="lazy"><figcaption>Input</figcaption></figure>
-                    <figure><img src="static/images/comparison_03_ours.jpg" alt="Example 3 result from our method" loading="lazy"><figcaption>Ours</figcaption></figure>
-                    <figure><img src="static/images/comparison_03_drlisp.jpg" alt="Example 3 result from DRL-ISP" loading="lazy"><figcaption>DRL-ISP</figcaption></figure>
-                    <figure><img src="static/images/comparison_03_star.jpg" alt="Example 3 reserved Star Enhancer result" loading="lazy"><figcaption>Star Enhancer</figcaption></figure>
+                  <div class="columns is-mobile is-multiline">
+                    <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_03_input.jpg" alt="Example 3 input image" loading="lazy"><p><strong>Input</strong></p></div>
+                    <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_03_ours.jpg" alt="Example 3 result from our method" loading="lazy"><p><strong>Ours</strong></p></div>
+                    <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_03_drlisp.jpg" alt="Example 3 result from DRL-ISP" loading="lazy"><p><strong>DRL-ISP</strong></p></div>
+                    <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_03_star.jpg" alt="Example 3 reserved Star Enhancer result" loading="lazy"><p><strong>Star Enhancer</strong></p></div>
                   </div>
                 </article>
               </div>
 
               <div class="column is-full">
-                <article class="comparison-card">
+                <article class="box">
                   <h3 class="title is-5">Example 4</h3>
-                  <div class="comparison-grid">
-                    <figure><img src="static/images/comparison_04_input.jpg" alt="Example 4 input image" loading="lazy"><figcaption>Input</figcaption></figure>
-                    <figure><img src="static/images/comparison_04_ours.jpg" alt="Example 4 result from our method" loading="lazy"><figcaption>Ours</figcaption></figure>
-                    <figure><img src="static/images/comparison_04_drlisp.jpg" alt="Example 4 result from DRL-ISP" loading="lazy"><figcaption>DRL-ISP</figcaption></figure>
-                    <figure><img src="static/images/comparison_04_star.jpg" alt="Example 4 reserved Star Enhancer result" loading="lazy"><figcaption>Star Enhancer</figcaption></figure>
+                  <div class="columns is-mobile is-multiline">
+                    <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_04_input.jpg" alt="Example 4 input image" loading="lazy"><p><strong>Input</strong></p></div>
+                    <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_04_ours.jpg" alt="Example 4 result from our method" loading="lazy"><p><strong>Ours</strong></p></div>
+                    <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_04_drlisp.jpg" alt="Example 4 result from DRL-ISP" loading="lazy"><p><strong>DRL-ISP</strong></p></div>
+                    <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_04_star.jpg" alt="Example 4 reserved Star Enhancer result" loading="lazy"><p><strong>Star Enhancer</strong></p></div>
                   </div>
                 </article>
               </div>
 
               <div class="column is-full">
-                <article class="comparison-card">
+                <article class="box">
                   <h3 class="title is-5">Example 5</h3>
-                  <div class="comparison-grid">
-                    <figure><img src="static/images/comparison_05_input.jpg" alt="Example 5 input image" loading="lazy"><figcaption>Input</figcaption></figure>
-                    <figure><img src="static/images/comparison_05_ours.jpg" alt="Example 5 result from our method" loading="lazy"><figcaption>Ours</figcaption></figure>
-                    <figure><img src="static/images/comparison_05_drlisp.jpg" alt="Example 5 result from DRL-ISP" loading="lazy"><figcaption>DRL-ISP</figcaption></figure>
-                    <figure><img src="static/images/comparison_05_star.jpg" alt="Example 5 reserved Star Enhancer result" loading="lazy"><figcaption>Star Enhancer</figcaption></figure>
+                  <div class="columns is-mobile is-multiline">
+                    <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_05_input.jpg" alt="Example 5 input image" loading="lazy"><p><strong>Input</strong></p></div>
+                    <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_05_ours.jpg" alt="Example 5 result from our method" loading="lazy"><p><strong>Ours</strong></p></div>
+                    <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_05_drlisp.jpg" alt="Example 5 result from DRL-ISP" loading="lazy"><p><strong>DRL-ISP</strong></p></div>
+                    <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_05_star.jpg" alt="Example 5 reserved Star Enhancer result" loading="lazy"><p><strong>Star Enhancer</strong></p></div>
                   </div>
                 </article>
               </div>
@@ -457,7 +330,7 @@
           </p>
         </div>
         <div class="table-container">
-          <table class="table is-fullwidth is-striped asset-table">
+          <table class="table is-fullwidth is-striped">
             <thead>
               <tr>
                 <th>Filename</th>
