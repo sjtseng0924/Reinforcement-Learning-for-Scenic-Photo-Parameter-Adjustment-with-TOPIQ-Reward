@@ -193,7 +193,7 @@
 
           <h3 class="title is-5 mt-5">Baseline 2: Star Enhancer</h3>
           <p>
-            Star Enhancer is included as a machine-learning-based image enhancement baseline. Its quantitative evaluation has not been completed yet, so the corresponding TOPIQ result is marked as <strong>TBD</strong>. The qualitative comparison section also reserves image slots for Star Enhancer outputs so the results can be inserted after evaluation.
+            We also include Star Enhancer as a machine-learning-based image enhancement baseline. Star Enhancer is designed for real-time, style-aware enhancement, where the model can enhance an input image toward a target tonal style or reference appearance. In our evaluation, we use the pretrained Star Enhancer model for inference rather than retraining it on our dataset. Because its inference pipeline requires a target/reference image, we provide the original, unmodified landscape image from the dataset as the ground-truth/reference image and use the degraded test image as the input. We then run the Star Enhancer inference pipeline directly to generate enhanced outputs for the same degraded-input test images used by our method and the DRL-ISP baseline.
           </p>
         </div>
       </div>
@@ -243,14 +243,14 @@
             <h2 class="title is-3">Qualitative Comparison</h2>
             <div class="content">
               <p>
-                The qualitative panel is organized as five scenic examples. Each example compares the degraded input, our PPO-enhanced result, the adapted DRL-ISP result, and the reserved Star Enhancer output slot.
+                For training, we synthesize degraded inputs by intentionally reducing the visual quality of high-quality landscape images, then train the PPO agent to recover better enhancement parameters from these degraded states. At test time, high-quality images from the dataset are similarly degraded and used as inputs for comparing each model. The five examples below cover four single-parameter degradation settings and one mixed degradation setting.
               </p>
             </div>
 
             <div class="columns is-multiline">
               <div class="column is-full">
                 <article class="box">
-                  <h3 class="title is-5">Example 1</h3>
+                  <h3 class="title is-5">Example 1: Brightness Degradation</h3>
                   <div class="columns is-mobile is-multiline">
                     <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_01_input.jpg" alt="Example 1 input image" loading="lazy"><p><strong>Input</strong></p></div>
                     <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_01_ours.jpg" alt="Example 1 result from our method" loading="lazy"><p><strong>Ours</strong></p></div>
@@ -262,7 +262,7 @@
 
               <div class="column is-full">
                 <article class="box">
-                  <h3 class="title is-5">Example 2</h3>
+                  <h3 class="title is-5">Example 2: Contrast Degradation</h3>
                   <div class="columns is-mobile is-multiline">
                     <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_02_input.jpg" alt="Example 2 input image" loading="lazy"><p><strong>Input</strong></p></div>
                     <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_02_ours.jpg" alt="Example 2 result from our method" loading="lazy"><p><strong>Ours</strong></p></div>
@@ -274,7 +274,7 @@
 
               <div class="column is-full">
                 <article class="box">
-                  <h3 class="title is-5">Example 3</h3>
+                  <h3 class="title is-5">Example 3: Saturation Degradation</h3>
                   <div class="columns is-mobile is-multiline">
                     <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_03_input.jpg" alt="Example 3 input image" loading="lazy"><p><strong>Input</strong></p></div>
                     <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_03_ours.jpg" alt="Example 3 result from our method" loading="lazy"><p><strong>Ours</strong></p></div>
@@ -286,7 +286,7 @@
 
               <div class="column is-full">
                 <article class="box">
-                  <h3 class="title is-5">Example 4</h3>
+                  <h3 class="title is-5">Example 4: Gamma Degradation</h3>
                   <div class="columns is-mobile is-multiline">
                     <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_04_input.jpg" alt="Example 4 input image" loading="lazy"><p><strong>Input</strong></p></div>
                     <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_04_ours.jpg" alt="Example 4 result from our method" loading="lazy"><p><strong>Ours</strong></p></div>
@@ -298,7 +298,7 @@
 
               <div class="column is-full">
                 <article class="box">
-                  <h3 class="title is-5">Example 5</h3>
+                  <h3 class="title is-5">Example 5: All-Parameter Degradation</h3>
                   <div class="columns is-mobile is-multiline">
                     <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_05_input.jpg" alt="Example 5 input image" loading="lazy"><p><strong>Input</strong></p></div>
                     <div class="column is-half-mobile is-one-quarter-tablet has-text-centered"><img src="static/images/comparison_05_ours.jpg" alt="Example 5 result from our method" loading="lazy"><p><strong>Ours</strong></p></div>
