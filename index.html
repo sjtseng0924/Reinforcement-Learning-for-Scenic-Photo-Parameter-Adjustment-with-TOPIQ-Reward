@@ -25,7 +25,7 @@
   <meta name="citation_author" content="Hsi-An Chen">
   <meta name="citation_publication_date" content="2026">
   <meta name="citation_conference_title" content="Course Final Project">
-  <meta name="citation_pdf_url" content="static/pdfs/RL_final_project__Copy_.pdf">
+  <meta name="citation_pdf_url" content="static/pdfs/paper.pdf">
 
   <title>Reinforcement Learning for Scenic Photo Enhancement with TOPIQ Reward</title>
 
@@ -312,7 +312,7 @@
         <h2 class="title is-3">Takeaway</h2>
         <div class="content">
           <p>
-            Our PPO-based sequential enhancement policy improves TOPIQ over the degraded input on the test set, while the adapted DRL-ISP baseline shows lower TOPIQ under this RGB landscape evaluation setting. Star Enhancer results are reserved for future comparison once evaluation is completed.
+            Our PPO-based sequential enhancement policy achieves the highest overall TOPIQ score among the evaluated methods. The adapted DRL-ISP baseline performs reasonably well on brightness-related degradations, especially when the input is under-exposed or over-exposed. However, it is less stable for contrast and color-related degradations, where the restored images can suffer from visible distortion or unnatural color shifts. Star Enhancer produces visually enhanced outputs through its pretrained inference pipeline, but its overall TOPIQ score remains lower than our method under this degraded RGB landscape evaluation setting.
           </p>
         </div>
       </div>
