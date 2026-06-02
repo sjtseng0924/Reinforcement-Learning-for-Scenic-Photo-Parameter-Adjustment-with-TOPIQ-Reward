@@ -233,10 +233,10 @@
         <p><em>Scores are reported in scaled TOPIQ units. Higher is better.</em></p>
         <div class="content mt-4">
           <p>
-            Our method is the only evaluated approach that achieves a positive TOPIQ improvement. DRL-ISP performs reasonably on brightness-related cases, but its results are less stable for color and contrast degradations. One possible reason is that the original DRL-ISP pipeline was designed for RAW/Bayer-style restoration rather than direct RGB landscape enhancement; therefore, we modified its code and input representation to make it usable as a baseline in our setting.
+            <strong>Ours</strong> is the only evaluated method that obtains a positive TOPIQ improvement over the degraded input, indicating that the learned sequential adjustment policy is better aligned with this scenic RGB enhancement setting. In contrast, <strong>DRL-ISP</strong> shows reasonable behavior for brightness-related degradations, but is less reliable for color and contrast degradations. A plausible explanation is that the original <strong>DRL-ISP</strong> framework was designed for RAW/Bayer-style restoration rather than direct RGB landscape enhancement. Therefore, although we adapt its code and input representation for our baseline experiment, some available ISP tools are not intended for making a scenic photo visually better; for example, smoothing or blurring operations may be selected and can reduce image detail.
           </p>
           <p>
-            Star Enhancer is originally designed for machine-learning-based style enhancement. In our experiments, it tends to make limited changes to the degraded inputs, suggesting that style transfer alone may be less sensitive to image quality recovery. Unlike our RL policy, it does not iteratively search for better combinations of adjustment parameters under a TOPIQ-based reward.
+            <strong>Star Enhancer</strong> is originally designed for machine-learning-based style enhancement rather than explicit no-reference quality optimization. In our experiments, its outputs tend to remain close to the degraded inputs, which suggests that style-oriented enhancement may be less sensitive to the specific quality degradations considered in this study. Unlike <strong>our RL policy</strong>, it does not iteratively optimize combinations of enhancement parameters using a TOPIQ-based feedback signal.
           </p>
         </div>
       </div>
