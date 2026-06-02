@@ -131,7 +131,7 @@
             <h2 class="title is-3 has-text-centered">Abstract</h2>
             <div class="content has-text-justified">
               <p>
-                This project explores reinforcement learning for scenic image enhancement. Given an RGB landscape image, an agent observes histogram-based image features and selects continuous image-processing parameters for contrast, brightness, saturation, and gamma correction. TOPIQ is used as a no-reference image quality metric, and the reward is defined by the TOPIQ score difference before and after each adjustment. Unlike supervised image-to-image translation methods that directly predict a restored image, our approach treats enhancement as a sequential decision-making problem, allowing the model to gradually improve the perceptual quality of the input through multiple accumulated operations.
+                Scenic photos often require post-processing to make brightness, contrast, color, and tone more visually pleasing, but these adjustment parameters interact with one another and make it difficult to find a good combination manually. This project formulates scenic photo enhancement as a sequential reinforcement learning problem, where a PPO agent learns to apply continuous adjustment parameters over multiple steps. We use TOPIQ as a no-reference reward signal, allowing training without paired ground-truth enhanced images while still optimizing toward perceptual quality. On our degraded RGB landscape test set, our method improves TOPIQ from 59.5785 to 61.1498 and outperforms the evaluated baselines.
               </p>
             </div>
           </div>
@@ -312,7 +312,10 @@
         <h2 class="title is-3">Takeaway</h2>
         <div class="content">
           <p>
-            Our PPO-based sequential enhancement policy achieves the highest overall TOPIQ score among the evaluated methods. The adapted DRL-ISP baseline performs reasonably well on brightness-related degradations, especially when the input is under-exposed or over-exposed. However, it is less stable for contrast and color-related degradations, where the restored images can suffer from visible distortion or unnatural color shifts. Star Enhancer produces visually enhanced outputs through its pretrained inference pipeline, but its overall TOPIQ score remains lower than our method under this degraded RGB landscape evaluation setting.
+            Our method is designed specifically for scenic RGB photo enhancement: the action space contains common landscape-editing controls such as brightness, contrast, saturation, and gamma correction, and the policy is trained directly with TOPIQ as a no-reference reward. This means our training process does not require paired ground-truth enhanced images, reducing the need for carefully aligned input/GT pairs compared with baselines that rely on paired restoration data or reference images.
+          </p>
+          <p>
+            Quantitatively, our PPO-based sequential enhancement policy is the only evaluated method that achieves a positive TOPIQ improvement, increasing the degraded input from 59.5785 to 61.1498. The adapted DRL-ISP baseline performs reasonably well on brightness-related degradations, but it is less stable for contrast and color-related cases, where unrelated ISP operations may introduce visible distortion, smoothing, or unnatural color shifts. Star Enhancer produces outputs through its pretrained reference-based inference pipeline, but its TOPIQ score does not improve over the degraded input and remains lower than our method in this RGB landscape evaluation setting.
           </p>
         </div>
       </div>
