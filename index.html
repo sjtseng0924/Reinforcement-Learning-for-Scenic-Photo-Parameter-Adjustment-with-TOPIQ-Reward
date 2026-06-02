@@ -189,7 +189,7 @@
 
           <h3 class="title is-5 mt-5">Baseline 2: Star Enhancer</h3>
           <p>
-            We also include Star Enhancer as a machine-learning-based image enhancement baseline. Star Enhancer is designed for real-time, style-aware enhancement, where the model can enhance an input image toward a target tonal style or reference appearance. In our evaluation, we use the pretrained Star Enhancer model for inference rather than retraining it on our dataset. Because its inference pipeline requires a target/reference image, we provide the original, unmodified landscape image from the dataset as the ground-truth/reference image and use the degraded test image as the input. We then run the Star Enhancer inference pipeline directly to generate enhanced outputs for the same degraded-input test images used by our method and the DRL-ISP baseline.
+            We also include Star Enhancer as a machine-learning-based image enhancement baseline. Star Enhancer is designed for real-time, style-aware enhancement, where the model can enhance an input image toward a target tonal style or reference appearance. In our evaluation, we use the pretrained Star Enhancer model for inference rather than retraining it on our dataset. Because its inference pipeline requires a target/reference image, we provide the original, unmodified landscape image from the dataset as the ground-truth/reference image and use the degraded test image as the input. We then run the Star Enhancer inference pipeline directly to generate its output images.
           </p>
         </div>
       </div>
@@ -231,6 +231,14 @@
           </table>
         </div>
         <p><em>Scores are reported in scaled TOPIQ units. Higher is better.</em></p>
+        <div class="content mt-4">
+          <p>
+            Our method is the only evaluated approach that achieves a positive TOPIQ improvement. DRL-ISP performs reasonably on brightness-related cases, but its results are less stable for color and contrast degradations. One possible reason is that the original DRL-ISP pipeline was designed for RAW/Bayer-style restoration rather than direct RGB landscape enhancement; therefore, we modified its code and input representation to make it usable as a baseline in our setting.
+          </p>
+          <p>
+            Star Enhancer is originally designed for machine-learning-based style enhancement. In our experiments, it tends to make limited changes to the degraded inputs, suggesting that style transfer alone may be less sensitive to image quality recovery. Unlike our RL policy, it does not iteratively search for better combinations of adjustment parameters under a TOPIQ-based reward.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -309,13 +317,13 @@
 
     <section class="section">
       <div class="container is-max-desktop">
-        <h2 class="title is-3">Takeaway</h2>
+        <h2 class="title is-3">Conclusion</h2>
         <div class="content">
           <p>
-            Our method is designed specifically for scenic RGB photo enhancement: the action space contains common landscape-editing controls such as brightness, contrast, saturation, and gamma correction, and the policy is trained directly with TOPIQ as a no-reference reward. This means our training process does not require paired ground-truth enhanced images, reducing the need for carefully aligned input/GT pairs compared with baselines that rely on paired restoration data or reference images.
+            This project demonstrates that scenic RGB photo enhancement can be effectively formulated as a sequential reinforcement learning problem. By restricting the action space to common landscape-editing controls, including brightness, contrast, saturation, and gamma correction, the proposed PPO agent learns parameter adjustments that are directly relevant to scenic photo post-processing. Since the policy is optimized with TOPIQ as a no-reference reward, training does not require paired ground-truth enhanced images, reducing the dependence on carefully aligned input/GT data.
           </p>
           <p>
-            Quantitatively, our PPO-based sequential enhancement policy is the only evaluated method that achieves a positive TOPIQ improvement, increasing the degraded input from 59.5785 to 61.1498. The adapted DRL-ISP baseline performs reasonably well on brightness-related degradations, but it is less stable for contrast and color-related cases, where unrelated ISP operations may introduce visible distortion, smoothing, or unnatural color shifts. Star Enhancer produces outputs through its pretrained reference-based inference pipeline, but its TOPIQ score does not improve over the degraded input and remains lower than our method in this RGB landscape evaluation setting.
+            Quantitatively, our PPO-based enhancement policy is the only evaluated method that achieves a positive TOPIQ improvement, increasing the degraded input score from 59.5785 to 61.1498. These results suggest that combining task-specific adjustment actions with a perceptual no-reference reward is effective for scenic photo enhancement.
           </p>
         </div>
       </div>
